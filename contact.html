@@ -45,29 +45,92 @@
         </div>
         <div class="right-content">
             <h2>Feedback Form</h2> <br>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required> <br> <br> 
+            <form id="validatedForm">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required> <br> <br> 
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required> <br> <br> 
             
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required> <br> <br> 
-            
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required> <br> <br> 
+
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required> <br> <br> 
+
 
                 <label for="male">Male</label>
-                <input type="radio" id="male" name="gender" value="male">
+                <input type="radio" id="gender" name="gender" value="male" required>
             
                 <label for="female">Female</label>
-                <input type="radio" id="female" name="gender" value="female"> <br> <br>
-            
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea><br> <br>
+                <input type="radio" id="gender " name="gender" value="female" required> <br> <br>
+
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="6" required></textarea><br> <br> 
+
+                <span id="validationError" style="color: red;"></span> <br>
             
                 <input type="submit" value="Submit">
             </form>
-            
 
+            <script>
+                // Get references to form elements
+                const validationForm = document.getElementById("validatedForm");
+                const firstNameInput = document.getElementById("firstName");
+                const lastNameInput = document.getElementById("lastName");
+                const phoneNumberInput = document.getElementById("phoneNumber");
+                const emailInput = document.getElementById("email");
+                const genderSelect = document.getElementById("gender");
+                const commentTextarea = document.getElementById("comment");
+                const validationError = document.getElementById("validationError");
+        
+                // Add a submit event listener to the form
+                validationForm.addEventListener("submit", function(event) {
+                    // Prevent the form from submitting by default
+                    event.preventDefault();
+                    
+                    // Checking if all requirements are satisfied
+                    // Validate first name and last name (alphabetic and first letter capital)
+                    const firstNamePattern = /^[A-Z][a-zA-Z]*$/;
+                    const lastNamePattern = /^[A-Z][a-zA-Z]*$/;
+        
+                    if (!firstNamePattern.test(firstNameInput.value) || !lastNamePattern.test(lastNameInput.value)) {
+                        validationError.textContent = "First name and last name should be alphabetic with the first letter capitalized.";
+                        return;
+                    }
+
+                    if (firstNameInput.value === lastNameInput.value) {
+                        validationError.textContent = "First name and last name cannot be the same.";
+                        return;
+                    }
+
+                    const phonePattern = /^\(\d{3}\) \d{3}-\d{4}$/;
+                    if (!phonePattern.test(phoneNumberInput.value)) {
+                        validationError.textContent = "Phone number must be formatted as (ddd) ddd-dddd.";
+                        return;
+                    }
+        
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(emailInput.value)) {
+                        validationError.textContent = "Email address must contain '@' and '.'";
+                        return;
+                    }
+
+                    if (genderSelect.value === "") {
+                        validationError.textContent = "Please select a gender.";
+                        return;
+                    }
+
+                    if (commentTextarea.value.length < 10) {
+                        validationError.textContent = "Comment must be at least 10 characters long.";
+                        return;
+                    }
+        
+                    // All validation checks passed, you can submit the form
+                    validationError.textContent = "";
+                    validationForm.submit();
+                });
+            </script>
             
         </div>
     </main>
