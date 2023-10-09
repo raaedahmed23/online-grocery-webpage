@@ -1,0 +1,251 @@
+/* text-align, text_shadow, background-color, background-image, background-repeat, font-size, 
+font-style, font-weight, link, visited, hover, active, 
+border-style, border-color, border-width, padding-bottom, padding-left, 
+padding-top, padding-right, margin-bottom, margin-left, margin-top, 
+margin-right, width, height, float, clear, position, vertical-align, 
+horizontal-align, display, opacity and visibility. */
+
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* Basic styling for header and navigation */
+header {
+    background-color: #4CAF50; /* Green color for freshness */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    float: center;
+    
+}
+
+nav {
+    background-color: #FF5722; /* Orange color for contrast */
+    color: white;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    /* justify-content: left; */
+    padding: 10px 0;
+}
+nav ul .right{
+    margin-left: auto;
+
+}
+nav ul .right + .right{
+    margin-left: 20px;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Layout for the main content area */
+main {
+    display: flex;
+}
+
+.left-content {
+    flex: 1;
+    background-color: #F1F8E9; /* Light green background for left content */
+    padding: 20px;
+    height: 100vh;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #4dff00
+}
+
+.fresh-produce{
+    flex: 1;
+    background-image: url(images/collageoffruitandveg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:20px; 
+    opacity: 0.9;
+    height: 100vh;
+}
+
+.frozen{
+    flex: 1;
+    background-image: url(images/frozen-pizza-aisle.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:20px; 
+    opacity: 0.9;
+    height: 100vh;
+}
+.pantry{
+    flex: 1;
+    background-image: url(images/pantry.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -70px;
+    padding:0px; 
+    opacity: 0.9;
+    height: 100vh;
+}
+.cereal{
+    flex: 1;
+    background-image: url(images/cereal.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -25px;
+    padding:20px; 
+    opacity: 0.9;
+    height: 100vh;
+}
+
+.baking{
+    flex: 1;
+    background-image: url(images/baking.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:20px; 
+    opacity: 0.9;
+    height: 100vh;
+}
+
+.snacks{
+    flex: 1;
+    background-image: url(images/snacks.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -100px ;
+    padding:20px; 
+    opacity: 0.9;
+    visibility: normal;
+    height: 100vh;
+}
+
+.candy{
+    flex: 1;
+    background-image: url(images/candies.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:20px; 
+    opacity: 0.9;
+    height: 100vh;
+}
+.specialty{
+    flex: 1;
+    background-image: url(images/specialty.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:20px; 
+    opacity: 0.9;
+    height: 100vh;
+}
+.deals{
+    flex: 1;
+    background-image: url(images/deals.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -1070px ;
+    padding:20px; 
+    opacity: 0.9;
+    height: 100vh;
+}
+.right-content {
+    flex: 2.5; /* Adjust this value to control the width ratio */
+    background-color: #FFFFFF; /*White background for right content */
+    padding: 20px;
+    /* background-image: url(collageoffruitandveg.jpg);
+    background-size:cover;
+    background-repeat: no-repeat; */
+}
+
+/* Styling for the footer */
+footer {
+    background-color: #4CAF50; /* Green color for footer */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    clear: both;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width:100%;
+}
+
+/* Style for the account information table */
+.account-info {
+    margin-top: 20px;
+}
+
+.account-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.account-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.account-info table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.account-info table td:first-child {
+    font-weight: bold;
+    background-color: #f7f7f7;
+}
+/* Style for the definition list */
+dl {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; /* Remove default list bullet points */
+}
+
+/* Style for the definition term (usually bold) */
+dt {
+    font-weight: bold;
+    margin-top: 10px; /* Add spacing between terms */
+}
+
+/* Style for the definition description */
+dd {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px; /* Add spacing between descriptions */
+}
+
+/* Add a border-bottom to separate terms and descriptions */
+dt + dd {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* Default link style */
+a:link {
+    color: white; /* Link color for unvisited links */
+    text-decoration: none; /* Remove underlines by default */
+}
+
+/* Visited link style */
+a:visited {
+    color: lightskyblue; /* Link color for visited links */
+}
+
+/* Hover effect */
+a:hover {
+    color: black; /* Link color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Active (clicked) link style */
+a:active {
+    color: #FF5733; /* Link color when clicked */
+}
