@@ -8,7 +8,6 @@
     <header>
         <h1>Fresh Products</h1>
         <span id="currentDateTime"></span>
-        <script src="ext_script.js"></script>
     </header>
     <nav>
         <ul>
@@ -44,10 +43,26 @@
             <dd>Elevate your dishes with the aroma and flavor of fresh herbs. Our herb selection includes basil, cilantro, mint, and more.</dd>
           </dl>
           
+          <div id="category-selector">
+            <select id="category-select">
+                <option value="all">Shop All</option>
+                <option value="vegetable">All Vegetables</option>
+                <option value="fruit">All Fruits</option>
+                <!-- Add more category options as needed -->
+            </select>
         </div>
+        
+        <div id="product-list">
+            <!-- Product listings will be displayed here -->
+        </div>
+        
+        
+        </div>
+
     </main>
     <footer>
         <p>&copy; Raaed Syed - RAS220006</p>
     </footer>
+    <script src="ext_script.js"></script>
 </body>
 </html>
