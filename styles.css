@@ -252,11 +252,16 @@ a:active {
 
 #product-list {
     display: flex; /* Use flexbox to display items horizontally */
+    flex-wrap: wrap;
+    /* justify-content: flex-start;
+    align-items: flex-start;  */
 }
 
 .product {
     width: 250px; /* Set a fixed width for each product */
     margin-right: 30px; /* Add some margin for spacing */
-    border: 1px solid #ccc; /* Optional: Add a border for visual separation */
+    margin-top: 15px; 
+    margin-bottom: 15px;
+    border: 2px solid #ccc; /* Optional: Add a border for visual separation */
     padding: 20px; /* Optional: Add padding for styling */
 }
