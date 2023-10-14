@@ -15,10 +15,14 @@ updateDateTime();
 
 // Cart functionality 
 const products = [
-    { id: 1, name: 'Apples', price: 1.99, quantity: 10, category:'fruit', image:''},
-    { id: 2, name: 'Bananas', price: 0.99, quantity: 15, category:'fruit' },
+    { id: 1, name: 'Apples', price: 1.99, quantity: 5, category:'fruit', image:''},
+    { id: 2, name: 'Bananas', price: 0.99, quantity: 3, category:'fruit' },
     { id: 3, name: 'Oranges', price: 2.49, quantity: 8, category:'fruit'},
     { id: 4, name: 'Lettuce', price: 2.49, quantity: 2, category:'vegetable' },
+    { id: 5, name: 'Tomatoes', price: 2.49, quantity: 2, category:'vegetable' },
+    { id: 6, name: 'Onions', price: 2.49, quantity: 2, category:'vegetable' },
+
+
 ];
 
 const cart = [];
