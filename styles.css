@@ -249,3 +249,14 @@ a:hover {
 a:active {
     color: #FF5733; /* Link color when clicked */
 }
+
+#product-list {
+    display: flex; /* Use flexbox to display items horizontally */
+}
+
+.product {
+    width: 250px; /* Set a fixed width for each product */
+    margin-right: 30px; /* Add some margin for spacing */
+    border: 1px solid #ccc; /* Optional: Add a border for visual separation */
+    padding: 20px; /* Optional: Add padding for styling */
+}
