@@ -42,12 +42,34 @@
                 <dt>Hard Candies</dt>
                 <dd> Enjoy the long-lasting flavors of hard candies. Whether you prefer fruity or minty, our hard candies offer a satisfying sweetness.</dd>
             </dl>
-            <!-- Your right content goes here -->
+
+
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for products" style="height:auto ; width: 300px;">
+                <button id="search-button">Search</button>
+            </div>
+            
+            <div id="product-list">
+                <!-- Product listings will be displayed here -->
+            </div>
+
         </div>
     </main>
     <footer>
         <p>&copy; Raaed Syed - RAS220006</p>
     </footer>
     <script src="ext_script.js"></script>
+    <script>
+        const searchInput = document.getElementById("search-input");
+        const searchButton = document.getElementById("search-button");
+
+        // Event listening for the search button 
+        searchButton.addEventListener("click", function(){
+            const searchQuery = searchInput.value.toLowerCase();
+            
+            populateProductList("candy", "all", searchQuery);
+
+        });
+    </script>
 </body>
 </html>

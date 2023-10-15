@@ -22,17 +22,20 @@ const products = [
     { id: 5, name: 'Tomatoes', price: 2.49, quantity: 2, sub_category:'vegetable', category:'fresh-produce' },
     { id: 6, name: 'Onions', price: 2.49, quantity: 2, sub_category:'vegetable', category:'fresh-produce' },
     { id: 7, name: 'Ice Cream', price: 2.49, quantity: 2, sub_category:'dessert', category:'frozen' },
+    { id: 8, name: 'Twix', price: 2.49, quantity: 3, sub_category:'', category:'candy' },
+    { id: 9, name: 'Snickers', price: 1.49, quantity: 3, sub_category:'', category:'candy' },
+
 ];
 
 const categorySelect = document.getElementById("subcategory-select");
 const productList = document.getElementById("product-list");
 
-function populateProductList(category, sub_category) {
+function populateProductList(category, sub_category, prod_name) {
     // Clear the product list
     productList.innerHTML = "";
 
     products
-        .filter(product => (category === "all" || product.category === category) && (sub_category === "all" || product.sub_category === sub_category))
+        .filter(product => (category === "all" || product.category === category) && (sub_category === "all" || product.sub_category === sub_category) && (prod_name === "all" || product.name.toLowerCase().includes(prod_name)))
         .forEach(product => {
             const productItem = document.createElement("div");
             productItem.classList.add("product");
@@ -70,12 +73,12 @@ function populateProductList(category, sub_category) {
 // Add a change event listener to the category selection dropdown
 categorySelect.addEventListener("change", function () {
     const selectedCategory = categorySelect.value;
-    category_list = ["fresh-produce", "frozen", "candy"];
+    category_list = ["fresh-produce", "frozen", "pantry", "breakfast-cereal", "candy"];
     if (category_list.includes(selectedCategory)){
-        populateProductList(selectedCategory, "all");
+        populateProductList(selectedCategory, "all", "all");
     }
     else{
-        populateProductList("all", selectedCategory);
+        populateProductList("all", selectedCategory, "all");
     }
 });
 
@@ -122,7 +125,7 @@ function displayCart(){
     });
 
     const cartItem = document.createElement("li");
-    cartItem.textContent = `Cart Total - Price: $${total_price}`;
+    cartItem.textContent = `Cart Total - Price: $${total_price.toFixed(2)}`;
     cartItemsElement.appendChild(cartItem)
 }
 
