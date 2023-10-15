@@ -43,9 +43,9 @@
             <dd>Elevate your dishes with the aroma and flavor of fresh herbs. Our herb selection includes basil, cilantro, mint, and more.</dd>
           </dl>
           
-          <div id="category-selector">
-            <select id="category-select">
-                <option value="all">Shop All</option>
+          <div id="subcategory-selector">
+            <select id="subcategory-select">
+                <option value="fresh-produce">Shop All</option>
                 <option value="vegetable">All Vegetables</option>
                 <option value="fruit">All Fruits</option>
                 <!-- Add more category options as needed -->
@@ -64,5 +64,9 @@
         <p>&copy; Raaed Syed - RAS220006</p>
     </footer>
     <script src="ext_script.js"></script>
+    <script> 
+        const initialCategory = "fresh-produce";
+        populateProductList(initialCategory, "all");
+    </script>
 </body>
 </html>
