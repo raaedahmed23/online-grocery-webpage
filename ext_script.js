@@ -7,15 +7,15 @@ function updateDateTime() {
 
         currentDateTimeElement.textContent = now.toLocaleString(undefined, options);
     }
+    setTimeout("updateDateTime()", 1000);
 }
-
 updateDateTime();
 // Update the date and time every second (1000 milliseconds)
 // setInterval(updateDateTime, 1000);
 
 // Inventory and Populating the products on each page 
 const products = [
-    { id: 1, name: 'Apples', price: 1.99, quantity: 5, sub_category:'fruit', image:'', category:'fresh-produce'},
+    { id: 1, name: 'Apples', price: 1.99, quantity: 5, sub_category:'fruit', imageSrc:'', category:'fresh-produce'},
     { id: 2, name: 'Bananas', price: 0.99, quantity: 3, sub_category:'fruit', category:'fresh-produce' },
     { id: 3, name: 'Oranges', price: 2.49, quantity: 8, sub_category:'fruit', category:'fresh-produce'},
     { id: 4, name: 'Lettuce', price: 2.49, quantity: 2, sub_category:'vegetable', category:'fresh-produce' },
@@ -84,7 +84,6 @@ categorySelect.addEventListener("change", function () {
 
 // Cart functionality
 
-
 function addToCartAndUpdateInventory(item) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     const existingProduct = products.find(product => product.id === item.id);
@@ -120,7 +119,7 @@ function displayCart(){
     cart.forEach(item => {
         const cartItem = document.createElement("li");
         cartItem.textContent = `${item.name} - Price: $${item.price.toFixed(2)} - Quantity: ${item.quantity}`;
-        total_price += parseFloat(item.price.toFixed(2))
+        total_price += parseFloat(item.price.toFixed(2) * item.quantity)
         cartItemsElement.appendChild(cartItem);
     });
 
