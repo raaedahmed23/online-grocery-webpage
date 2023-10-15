@@ -45,7 +45,7 @@
 
 
             <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search for products" style="height:auto ; width: 300px;">
+                <input type="text" id="search-input" placeholder="Search for products" style="height:auto ; width: 300px; font-size: large;">
                 <button id="search-button">Search</button>
             </div>
             
@@ -66,8 +66,14 @@
         // Event listening for the search button 
         searchButton.addEventListener("click", function(){
             const searchQuery = searchInput.value.toLowerCase();
-            
-            populateProductList("candy", "all", searchQuery);
+            const searchPattern = /^[a-zA-Z]+$/;
+            if(!searchPattern.test(searchQuery)){
+                alert("Search must only contain alphabets! No numbers or special characters allowed. ");
+            }
+            else{
+                populateProductList("candy", "all", searchQuery);
+            }
+
 
         });
     </script>
