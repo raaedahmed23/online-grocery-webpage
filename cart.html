@@ -33,9 +33,12 @@
         <div class="right-content">
             <h3><em>Here is your cart!</em></h3>
 
-            <div id="shopping-cart">
+            <div id="cart">
                 <ul id="cart-items"></ul>
             </div>
+            
+            <br>
+            <button id="clear-button">Clear Cart</button>
             
             <!-- <p>We love helping you save while you shop. Explore our Deals section to find a treasure trove of discounts, special offers, and exclusive promotions that will make your shopping experience even more rewarding.</p>
 
@@ -46,5 +49,14 @@
         <p>&copy; Raaed Syed - RAS220006</p>
     </footer>
     <script src="ext_script.js"></script>
+    <script>
+        displayCart();
+
+        const clearButton = document.getElementById("clear-button")
+        clearButton.addEventListener("click", function(){
+            localStorage.removeItem("cart")
+            displayCart()
+        })
+    </script>
 </body>
 </html>
