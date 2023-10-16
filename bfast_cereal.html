@@ -42,12 +42,31 @@
                 <dt>Coffee and Tea</dt>
                 <dd>Pair your breakfast with a cup of your favorite coffee or tea. We offer a curated collection of beans, blends, and teas to suit your taste. </dd>
             </dl>
-            <!-- Your right content goes here -->
+
+            <div id="subcategory-selector">
+                <select id="subcategory-select">
+                    <option value="breakfast-cereal">Shop All</option>
+                    <option value="cereal">Cereal Shop</option>
+                    <option value="pancake-waffle">Pancakes & Waffles</option>
+                    <option value="oat-grit">Oatmeal & Grits</option>
+                    <option value="bc-rollback">Rollbacks</option>
+                    <option value="bread">Breakfast Bread</option>
+                    <!-- Add more category options as needed -->
+                </select>
+            </div>
+            
+            <div id="product-list">
+                <!-- Product listings will be displayed here -->
+            </div>
         </div>
     </main>
     <footer>
         <p>&copy; Raaed Syed - RAS220006</p>
     </footer>
     <script src="ext_script.js"></script>
+    <script> 
+        const initialCategory = "breakfast-cereal";
+        populateProductList(initialCategory, "all", "all");
+    </script>
 </body>
 </html>

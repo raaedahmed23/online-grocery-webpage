@@ -44,12 +44,28 @@
                 <dd> Explore our selection of canned goods, including vegetables, fruits, and soups. They are perfect for adding convenience and nutrition to your meals.</dd>
             </dl>
 
-            <!-- Your right content goes here -->
+            <div id="subcategory-selector">
+                <select id="subcategory-select">
+                    <option value="pantry">Shop All</option>
+                    <option value="canned-veg">Canned Vegetables</option>
+                    <option value="pbs">Peanut Butter & Spread</option>
+                    <option value="pasta-pizza">Pasta & Pizza</option>
+                    <option value="pantry-rollback">Rollbacks</option>
+                </select>
+            </div>
+            
+            <div id="product-list">
+                <!-- Product listings will be displayed here -->
+            </div>
         </div>
     </main>
     <footer>
         <p>&copy; Raaed Syed - RAS220006</p>
     </footer>
     <script src="ext_script.js"></script>
+    <script> 
+        const initialCategory = "pantry";
+        populateProductList(initialCategory, "all", "all");
+    </script>
 </body>
 </html>

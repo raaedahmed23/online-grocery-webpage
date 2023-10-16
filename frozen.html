@@ -37,18 +37,37 @@
             <dl>
                 <dt>Frozen Fruits and Vegetables</dt>
                 <dd>From frozen berries for your morning smoothie to convenient frozen vegetables for your weeknight dinners, we have a wide selection of options to choose from.</dd>
-                <dt>Frozen Seafood</dt>
-                <dd> Enjoy the freshness of the ocean with our frozen seafood collection. We offer responsibly sourced fish, shrimp, and more to elevate your seafood dishes.</dd>
                 <dt>Frozen Desserts</dt>
                 <dd>Satisfy your sweet tooth with our selection of frozen desserts. From ice creams to sorbets, there's a treat for everyone.</dd>
             </dl>
 
-            <!-- Your right content goes here -->
+            <div id="subcategory-selector">
+                <select id="subcategory-select">
+                    <option value="frozen">Shop All</option>
+                    <option value="dessert">Dessert</option>
+                    <option value="meal">Meals</option>
+                    <option value="pizza">Pizza</option>
+                    <option value="meat">Meat</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="frozen-snack">Snacks</option>
+                    <option value="frozen-rollback">Rollbacks</option>
+                    <!-- Add more category options as needed -->
+                </select>
+            </div>
+            
+            <div id="product-list">
+                <!-- Product listings will be displayed here -->
+            </div>
+            
         </div>
     </main>
     <footer>
         <p>&copy; Raaed Syed - RAS220006</p>
     </footer>
     <script src="ext_script.js"></script>
+    <script> 
+        const initialCategory = "frozen";
+        populateProductList(initialCategory, "all", "all");
+    </script>
 </body>
 </html>
