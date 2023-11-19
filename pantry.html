@@ -19,7 +19,6 @@
             <li><a href="baking.html">Baking</a></li>
             <li><a href="snacks.html">Snacks</a></li>
             <li><a href="candy.html">Candy</a></li>
-            <li><a href="special_shops.html">Specialty Shops</a></li>
             <li class="right"><a href="cart.html">My Cart</a></li>
             <li class="right"><a href="my_account.html">My-Account</a></li>
             <li class="right"><a href="about-us.html">About Us</a></li>
@@ -62,10 +61,12 @@
     <footer>
         <p>&copy; Raaed Syed - RAS220006</p>
     </footer>
-    <script src="ext_script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="common.js"></script>
+    <script src="json_script.js"></script>
     <script> 
         const initialCategory = "pantry";
-        populateProductList(initialCategory, "all", "all");
+        fetchAndDisplayProductsFromJson(initialCategory, "all", "all");
     </script>
 </body>
 </html>
