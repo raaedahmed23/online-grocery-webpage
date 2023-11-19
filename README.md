@@ -1,3 +1,3 @@
 # Grocery E-Commerce Webpage
 
-An online grocery store webpage written in HTML and JavaScript 
+A personal project to learn web-development. The front-end of the website is implemented using HTML, CSS and JavaScript. The backend uses PHP. 
