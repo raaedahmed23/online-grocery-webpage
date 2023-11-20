@@ -1,3 +1,7 @@
 .DS_Store
 notes.txt
 Assignment4.pdf
+/node_modules
+package-lock.json
+package.json
+test_script.js
